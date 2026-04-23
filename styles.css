@@ -1,0 +1,83 @@
+/* Configuración Base */
+body {
+    background-color: #FFFBEB;
+}
+
+/* 1. ANIMACIONES DEL FORMULARIO */
+.input-animate {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.input-animate:focus {
+    transform: scale(1.03) translateY(-2px);
+    box-shadow: 0 0 25px rgba(251, 191, 36, 0.9);
+    border-color: #B45309;
+    background-color: #ffffff !important;
+}
+
+.input-group:focus-within label {
+    color: #78350F;
+    transform: translateY(-4px) scale(1.05);
+    text-shadow: 0 2px 4px rgba(255, 255, 255, 0.8);
+    transition: all 0.3s ease;
+}
+
+/* 2. ANIMACIONES INFANTILES (Wobble y Vuelo de Abejas) */
+.wobble-hover:hover {
+    animation: wobble 1s ease-in-out infinite;
+}
+
+@keyframes wobble {
+
+    0%,
+    100% {
+        transform: rotate(-5deg);
+    }
+
+    50% {
+        transform: rotate(5deg);
+    }
+}
+
+/* Animación de vuelo suave para las abejas */
+.animate-fly-1 {
+    animation: fly1 6s ease-in-out infinite;
+}
+
+.animate-fly-2 {
+    animation: fly2 8s ease-in-out infinite;
+}
+
+@keyframes fly1 {
+
+    0%,
+    100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+    33% {
+        transform: translate(15px, -20px) rotate(15deg);
+    }
+
+    66% {
+        transform: translate(-10px, 15px) rotate(-10deg);
+    }
+}
+
+@keyframes fly2 {
+
+    0%,
+    100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+    50% {
+        transform: translate(-25px, -15px) rotate(-15deg);
+    }
+}
+
+/* 3. FONDO HEXAGONAL (Panal de Abejas) */
+.hex-bg {
+    background-color: #FFFBEB;
+    background-image: url("data:image/svg+xml,%3Csvg width='56' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M28 66L0 50L0 16L28 0L56 16L56 50L28 66L28 100' fill='none' stroke='%23fbbf24' stroke-width='3' opacity='0.5'/%3E%3Cpath d='M28 0L28 34L0 50L0 84L28 100L56 84L56 50L28 34' fill='none' stroke='%23fbbf24' stroke-width='3' opacity='0.5'/%3E%3C/svg%3E");
+}
