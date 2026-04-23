@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>¡El Baby Shower de Dylan Steven!</title>
 
     <link
@@ -22,8 +22,9 @@
                         sans: ['Quicksand', 'sans-serif'], display: ['Fredoka', 'cursive'],
                     },
                     boxShadow: {
-                        'cartoon': '8px 8px 0px 0px rgba(120, 53, 15, 0.15)',
-                        'cartoon-hover': '4px 4px 0px 0px rgba(120, 53, 15, 0.15)',
+                        'cartoon': '6px 6px 0px 0px rgba(120, 53, 15, 0.15)',
+                        'cartoon-hover': '3px 3px 0px 0px rgba(120, 53, 15, 0.15)',
+                        'glass': '0 8px 32px 0 rgba(120, 53, 15, 0.2)',
                     }
                 }
             }
@@ -33,180 +34,263 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="text-woodBrown leading-relaxed font-sans pb-0 relative overflow-x-hidden">
+<body class="text-woodBrown leading-relaxed font-sans pb-0 relative overflow-x-hidden bg-bgCream">
+
+    <div id="welcomeOverlay"
+        class="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-bgCream transition-opacity duration-700 px-6">
+        <img src="3.png" class="w-28 h-28 md:w-32 md:h-32 mb-6 animate-bounce" alt="Pooh">
+        <h2 class="text-3xl md:text-5xl font-display text-honey mb-8 text-center leading-tight">¡Tienes una invitación
+            muy especial!</h2>
+        <button id="startBtn"
+            class="bg-poohRed text-white px-8 py-4 rounded-full font-bold text-xl md:text-2xl hover:bg-red-700 transition shadow-cartoon transform hover:scale-105 animate-pulse w-full max-w-xs">
+            Abrir Invitación 🍯
+        </button>
+        <p class="mt-6 text-woodBrown text-sm md:text-base font-semibold flex items-center gap-2 text-center">
+            <img src="https://img.icons8.com/ios-filled/50/78350F/room-sound.png" class="w-5 h-5" alt="Sonido">
+            Sube el volumen de tu celular
+        </p>
+    </div>
 
     <img src="https://img.icons8.com/color/48/bee.png"
-        class="absolute top-20 left-10 w-12 animate-fly-1 z-30 opacity-80" alt="Abeja">
+        class="hidden sm:block absolute top-20 left-10 w-12 animate-fly-1 z-30 opacity-80" alt="Abeja">
     <img src="https://img.icons8.com/color/48/bee.png"
-        class="absolute top-40 right-10 w-10 animate-fly-2 z-30 opacity-80" alt="Abeja">
+        class="absolute top-40 right-4 w-8 md:w-10 animate-fly-2 z-30 opacity-80" alt="Abeja">
+    <img src="1.png" class="hidden md:block absolute top-[30%] left-[5%] w-16 opacity-50 floating z-20" alt="Miel">
+    <img src="1.png" class="hidden md:block absolute top-[60%] right-[5%] w-12 opacity-40 floating z-20" alt="Miel"
+        style="animation-delay: 2s;">
 
     <header
-        class="relative pt-20 pb-32 px-6 overflow-hidden border-b-8 border-poohYellow flex items-center justify-center min-h-[80vh]">
-        <video autoplay loop playsinline class="absolute inset-0 w-full h-full object-cover z-0">
+        class="relative pt-16 pb-24 px-4 md:px-6 overflow-hidden border-b-8 border-poohYellow flex items-center justify-center min-h-[100dvh]">
+
+        <video id="mainVideo" loop playsinline class="absolute inset-0 w-full h-full object-cover z-0">
             <source src="fondo1.mp4" type="video/mp4">
         </video>
+        <div class="absolute inset-0 bg-black/10 z-0 pointer-events-none"></div>
 
-        <div class="relative z-10 max-w-4xl mx-auto text-center mt-10">
+        <button id="audioBtn"
+            class="absolute bottom-6 right-4 md:bottom-8 md:right-8 z-30 bg-white/80 backdrop-blur-sm p-3 md:p-4 rounded-full border-4 border-poohYellow shadow-cartoon hover:scale-110 active:scale-95 transition-all duration-300 group flex items-center gap-2">
+            <span id="audioIcon" class="text-xl md:text-3xl">🔊</span>
+            <span id="audioText"
+                class="font-display font-bold text-sm md:text-base text-woodBrown hidden md:block group-hover:text-honey transition-colors">Silenciar</span>
+        </button>
+
+        <div class="relative z-10 max-w-4xl mx-auto text-center mt-4 reveal">
             <div
-                class="inline-block bg-white p-4 rounded-full border-8 border-dashed border-poohYellow shadow-2xl mb-6 wobble-hover">
+                class="inline-block bg-white/80 backdrop-blur-sm p-3 md:p-4 rounded-full border-4 md:border-8 border-dashed border-poohYellow shadow-xl mb-4 md:mb-6 wobble-hover">
                 <img src="https://www.thecakeshop.co.nz/cdn/shop/products/winnie_round_2_md_252x.jpg?v=1581799347"
-                    alt="Winnie the Pooh" class="w-32 h-32 md:w-48 md:h-48 rounded-full object-cover">
+                    alt="Winnie the Pooh" class="w-28 h-28 md:w-48 md:h-48 rounded-full object-cover">
             </div>
 
             <div
-                class="bg-white/90 backdrop-blur-sm p-8 md:p-12 rounded-[3rem] border-4 border-poohYellow shadow-cartoon inline-block w-full max-w-3xl transform transition hover:scale-105 duration-300 relative">
-                <img src="https://img.icons8.com/color/48/bee.png" class="absolute -top-6 -right-6 w-12 animate-bounce"
-                    alt="Abeja">
-
-                <p class="text-poohRed font-bold tracking-widest uppercase text-sm md:text-lg mb-2">¡Es un niño!</p>
-                <h1 class="text-5xl md:text-7xl font-display text-honey mb-4">Dylan Steven</h1>
-                <p class="text-xl md:text-2xl font-semibold text-woodBrown">Un pedacito de cielo llega a nuestro bosque.
-                </p>
+                class="bg-white/70 backdrop-blur-md p-6 md:p-12 rounded-[2.5rem] border-4 border-white/50 shadow-glass inline-block w-full max-w-3xl transform transition hover:scale-105 duration-300 relative">
+                <img src="https://img.icons8.com/color/48/bee.png"
+                    class="absolute -top-5 -right-2 md:-right-6 w-10 md:w-12 animate-bounce" alt="Abeja">
+                <p class="text-poohRed font-bold tracking-widest uppercase text-xs md:text-lg mb-2 drop-shadow-sm">¡Es
+                    un niño!</p>
+                <h1 class="text-4xl md:text-7xl font-display text-honey mb-3 leading-tight drop-shadow-md">Dylan Steven
+                </h1>
+                <p class="text-lg md:text-2xl font-semibold text-woodBrown drop-shadow-sm">Un pedacito de cielo llega a
+                    nuestro bosque.</p>
             </div>
         </div>
     </header>
 
-    <section class="max-w-5xl mx-auto px-6 -mt-16 relative z-20">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <section class="max-w-5xl mx-auto px-4 md:px-6 -mt-12 md:-mt-16 relative z-20">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6">
+
             <div
-                class="bg-poohYellow border-4 border-woodBrown p-8 rounded-[3rem] shadow-cartoon text-center transform transition duration-300 hover:-translate-y-2 relative">
-                <div
-                    class="bg-white w-20 h-20 mx-auto rounded-full flex items-center justify-center text-4xl mb-4 border-4 border-dashed border-woodBrown shadow-inner">
-                    📅</div>
-                <h3 class="font-display text-2xl text-woodBrown mb-2">¿Cuándo?</h3>
-                <p class="font-bold text-xl bg-white/60 py-2 rounded-2xl border border-woodBrown/20">Dom. 24 de Mayo</p>
-                <p class="text-lg mt-2 font-semibold">3:00 PM a 6:00 PM</p>
+                class="bg-poohYellow border-4 border-woodBrown p-6 md:p-8 rounded-[2.5rem] shadow-cartoon text-center transform transition duration-300 hover:-translate-y-2 relative reveal flex flex-col justify-between">
+                <div>
+                    <div
+                        class="bg-white w-16 h-16 md:w-20 md:h-20 mx-auto rounded-full flex items-center justify-center text-3xl md:text-4xl mb-3 border-4 border-dashed border-woodBrown shadow-inner">
+                        📅</div>
+                    <h3 class="font-display text-xl md:text-2xl text-woodBrown mb-2">¿Cuándo?</h3>
+                    <p class="font-bold text-lg md:text-xl bg-white/60 py-2 rounded-2xl border border-woodBrown/20">Dom.
+                        24 de Mayo</p>
+                    <p class="text-base md:text-lg mt-2 font-semibold mb-4">3:00 PM a 6:00 PM</p>
+                </div>
+                <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Baby+Shower+Dylan+Steven&dates=20260524T200000Z/20260524T230000Z&details=¡Te+esperamos+para+celebrar+la+llegada+de+Dylan+Steven!&location=Discoteca+Deja+Vu"
+                    target="_blank"
+                    class="inline-flex items-center justify-center gap-2 bg-woodBrown text-white px-4 py-2 rounded-xl font-bold text-sm hover:bg-honey transition shadow-md w-full">
+                    <img src="https://img.icons8.com/color/48/google-calendar--v2.png" class="w-5 h-5" alt="Calendario">
+                    Añadir al calendario
+                </a>
             </div>
+
             <div
-                class="bg-poohRed border-4 border-woodBrown p-8 rounded-[3rem] shadow-cartoon text-center text-white transform transition duration-300 hover:-translate-y-2">
+                class="bg-poohRed border-4 border-woodBrown p-6 md:p-8 rounded-[2.5rem] shadow-cartoon text-center text-white transform transition duration-300 hover:-translate-y-2 reveal flex flex-col justify-center">
                 <div
-                    class="bg-white w-20 h-20 mx-auto rounded-full flex items-center justify-center text-4xl mb-4 border-4 border-dashed border-woodBrown shadow-inner">
+                    class="bg-white w-16 h-16 md:w-20 md:h-20 mx-auto rounded-full flex items-center justify-center text-3xl md:text-4xl mb-3 border-4 border-dashed border-woodBrown shadow-inner">
                     🍯</div>
-                <h3 class="font-display text-2xl mb-2">¿Dónde?</h3>
-                <p class="font-bold text-xl bg-black/20 py-2 rounded-2xl">Discoteca Deja Vu</p>
-                <p class="text-lg mt-2 font-semibold">Asistencia Puntual</p>
+                <h3 class="font-display text-xl md:text-2xl mb-2">¿Dónde?</h3>
+                <p class="font-bold text-lg md:text-xl bg-black/20 py-2 rounded-2xl">Discoteca Deja Vu</p>
+                <p class="text-base md:text-lg mt-2 font-semibold">Asistencia Puntual</p>
             </div>
+
             <div
-                class="bg-pigletPink border-4 border-woodBrown p-8 rounded-[3rem] shadow-cartoon text-center transform transition duration-300 hover:-translate-y-2">
+                class="bg-pigletPink border-4 border-woodBrown p-6 md:p-8 rounded-[2.5rem] shadow-cartoon text-center transform transition duration-300 hover:-translate-y-2 reveal flex flex-col justify-center">
                 <div
-                    class="bg-white w-20 h-20 mx-auto rounded-full flex items-center justify-center text-4xl mb-4 border-4 border-dashed border-woodBrown shadow-inner">
+                    class="bg-white w-16 h-16 md:w-20 md:h-20 mx-auto rounded-full flex items-center justify-center text-3xl md:text-4xl mb-3 border-4 border-dashed border-woodBrown shadow-inner">
                     👕</div>
-                <h3 class="font-display text-2xl text-woodBrown mb-2">Código de Vestir</h3>
-                <p class="font-bold text-xl bg-white/60 py-2 rounded-2xl border border-woodBrown/20">Colores Pastel</p>
-                <p class="text-lg mt-2 font-semibold">¡Ven muy cómodo!</p>
+                <h3 class="font-display text-xl md:text-2xl text-woodBrown mb-2">Código de Vestir</h3>
+                <p class="font-bold text-lg md:text-xl bg-white/60 py-2 rounded-2xl border border-woodBrown/20">Colores
+                    Pastel</p>
+                <p class="text-base md:text-lg mt-2 font-semibold">¡Ven muy cómodo!</p>
             </div>
         </div>
     </section>
 
-    <section class="py-24 px-6 mt-12 hex-bg border-t-8 border-b-8 border-poohYellow shadow-inner relative">
+    <section
+        class="py-16 md:py-24 px-4 md:px-6 mt-10 hex-bg border-t-8 border-b-8 border-poohYellow shadow-inner relative reveal">
         <img src="https://img.icons8.com/color/48/bee.png"
-            class="absolute top-10 right-1/4 w-12 animate-fly-1 opacity-60" alt="Abeja">
+            class="absolute top-10 right-4 md:right-1/4 w-10 md:w-12 animate-fly-1 opacity-60" alt="Abeja">
         <div class="max-w-4xl mx-auto text-center relative z-10">
             <h2
-                class="text-4xl md:text-5xl font-display text-woodBrown mb-8 bg-white/90 backdrop-blur-sm inline-block px-10 py-3 rounded-[2rem] border-4 border-dashed border-poohYellow shadow-lg">
-                ¿Cómo llegar a la fiesta?
+                class="text-3xl md:text-5xl font-display text-woodBrown mb-6 md:mb-8 bg-white/90 backdrop-blur-sm inline-block px-6 md:px-10 py-3 rounded-[2rem] border-4 border-dashed border-poohYellow shadow-lg">
+                ¿Cómo llegar?
             </h2>
             <div
-                class="bg-white p-4 md:p-6 rounded-[3rem] border-8 border-woodBrown shadow-cartoon mb-8 transform transition hover:scale-[1.01] duration-300 relative">
-                <img src="2.png" class="absolute -bottom-6 -left-6 w-16" alt="Pooh">
+                class="bg-white p-3 md:p-6 rounded-[2rem] border-4 md:border-8 border-woodBrown shadow-cartoon mb-6 transform transition hover:scale-[1.01] duration-300 relative">
+                <img src="2.png" class="absolute -bottom-4 -left-4 w-12 md:w-16 z-10 drop-shadow-md" alt="Pooh">
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d248.77669626663598!2d-76.48390352725983!3d3.93193543163561!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e375f001f51c56b%3A0x12befbd2584565e0!2sDeja%20Vu!5e0!3m2!1ses!2sco!4v1776975080488!5m2!1ses!2sco"
-                    width="100%" height="400" style="border:0; border-radius: 2rem;" allowfullscreen="" loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    width="100%" height="300" class="md:h-[400px] relative z-0" style="border:0; border-radius: 1.5rem;"
+                    allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
             <a href="https://maps.app.goo.gl/PDjxXJ1nsVTXM3Mt7" target="_blank"
-                class="inline-flex items-center justify-center gap-4 bg-white border-4 border-woodBrown text-woodBrown px-8 py-4 rounded-[2rem] font-bold text-2xl hover:bg-poohYellow hover:text-woodBrown transition duration-300 shadow-cartoon transform hover:-translate-y-1">
-                <img src="https://img.icons8.com/color/48/google-maps-new.png" class="w-10 h-10" alt="Google Maps">
+                class="w-full md:w-auto inline-flex items-center justify-center gap-3 bg-white border-4 border-woodBrown text-woodBrown px-6 md:px-8 py-3 md:py-4 rounded-[2rem] font-bold text-lg md:text-2xl hover:bg-poohYellow hover:text-woodBrown transition duration-300 shadow-cartoon transform hover:-translate-y-1">
+                <img src="https://img.icons8.com/color/48/google-maps-new.png" class="w-8 h-8 md:w-10 md:h-10"
+                    alt="Google Maps">
                 Abrir en Google Maps
             </a>
         </div>
     </section>
 
     <section
-        class="relative py-24 px-6 border-b-8 border-woodBrown overflow-hidden min-h-screen flex items-center justify-center">
+        class="relative py-16 md:py-24 px-4 md:px-6 border-b-8 border-woodBrown overflow-hidden min-h-[100dvh] flex items-center justify-center">
         <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover z-0">
             <source src="fondo2.mp4" type="video/mp4">
         </video>
-        <div class="absolute inset-0 bg-black/20 z-0"></div>
+        <div class="absolute inset-0 bg-black/10 z-0"></div>
 
         <div
-            class="relative z-10 max-w-2xl w-full mx-auto bg-white/50 backdrop-blur-md rounded-[3rem] shadow-2xl overflow-hidden border-4 border-poohYellow">
+            class="relative z-10 max-w-2xl w-full mx-auto bg-white/50 backdrop-blur-md rounded-[2.5rem] shadow-glass overflow-hidden border-2 border-white/60 reveal">
+
             <div
-                class="bg-poohRed/90 backdrop-blur-sm p-8 text-center text-white border-b-4 border-poohYellow relative">
-                <img src="https://img.icons8.com/color/48/bee.png" class="absolute top-4 left-4 w-10 animate-bounce"
-                    alt="Abeja">
-                <h2 class="text-3xl md:text-4xl font-display mb-2 drop-shadow-md">Confirma tu asistencia</h2>
-                <p class="text-lg font-medium opacity-100 drop-shadow-sm">Por favor, avísanos si podrás acompañarnos 🍯
-                </p>
+                class="bg-poohRed/80 backdrop-blur-md p-6 md:p-8 text-center text-white border-b-2 border-white/40 relative">
+                <img src="https://img.icons8.com/color/48/bee.png"
+                    class="absolute top-4 left-4 w-8 md:w-10 animate-bounce" alt="Abeja">
+                <h2 class="text-2xl md:text-4xl font-display mb-1 md:mb-2 drop-shadow-md">Confirma tu asistencia</h2>
+                <p class="text-sm md:text-lg font-medium opacity-100 drop-shadow-sm">Ayúdanos a preparar todo con amor
+                    🍯</p>
             </div>
 
-            <form action="https://formspree.io/f/xkokkqbg" method="POST" class="p-6 md:p-10 space-y-8 bg-transparent"
-                id="rsvpForm">
+            <form action="https://formspree.io/f/xkokkqbg" method="POST"
+                class="p-5 md:p-10 space-y-6 md:space-y-8 bg-transparent" id="rsvpForm">
 
-                <div class="input-group">
-                    <label class="block text-xl font-bold mb-2 text-woodBrown">Nombre y Apellido</label>
-                    <input type="text" name="nombre" required
-                        class="input-animate w-full bg-white/80 backdrop-blur-sm border-4 border-white/60 p-4 rounded-[1.5rem] text-lg outline-none focus:border-honey"
-                        placeholder="Ej. Amapola Suarez">
+                <div class="input-group bg-white/40 p-4 md:p-6 rounded-2xl border border-white/50 shadow-sm relative">
+                    <span
+                        class="absolute -top-3 left-4 bg-poohYellow text-woodBrown font-bold px-3 py-1 rounded-full text-xs shadow-md border border-woodBrown">Paso
+                        1: ¿Quién eres?</span>
+
+                    <div class="space-y-4 mt-2">
+                        <div>
+                            <label class="block text-sm md:text-base font-bold mb-1 text-woodBrown">Nombre y
+                                Apellido</label>
+                            <input type="text" name="nombre" required
+                                class="input-animate w-full bg-white/90 border-2 border-white/60 p-3 rounded-xl text-base outline-none focus:border-honey placeholder-woodBrown/40"
+                                placeholder="Ej. Amapola Suarez">
+                        </div>
+                        <div>
+                            <label class="block text-sm md:text-base font-bold mb-1 text-woodBrown">Teléfono
+                                (WhatsApp)</label>
+                            <input type="tel" name="telefono" required
+                                class="input-animate w-full bg-white/90 border-2 border-white/60 p-3 rounded-xl text-base outline-none focus:border-honey placeholder-woodBrown/40"
+                                placeholder="Ej. 3201234567">
+                        </div>
+                    </div>
                 </div>
 
-                <div class="input-group">
-                    <label class="block text-xl font-bold mb-2 text-woodBrown">Teléfono (WhatsApp)</label>
-                    <input type="tel" name="telefono" required
-                        class="input-animate w-full bg-white/80 backdrop-blur-sm border-4 border-white/60 p-4 rounded-[1.5rem] text-lg outline-none focus:border-honey"
-                        placeholder="Ej. 3201234567">
-                </div>
+                <div class="input-group bg-white/40 p-4 md:p-6 rounded-2xl border border-white/50 shadow-sm relative">
+                    <span
+                        class="absolute -top-3 left-4 bg-pigletPink text-woodBrown font-bold px-3 py-1 rounded-full text-xs shadow-md border border-woodBrown">Paso
+                        2: Detalles</span>
 
-                <div class="input-group">
-                    <label class="block text-xl font-bold mb-2 text-woodBrown">¿Qué eres de Dylan Steven?</label>
-                    <select name="relacion" required
-                        class="input-animate w-full bg-white/80 backdrop-blur-sm border-4 border-white/60 p-4 rounded-[1.5rem] text-lg outline-none cursor-pointer focus:border-honey">
-                        <option value="" disabled selected>Selecciona una opción...</option>
-                        <option value="Tio/Tia">Tío / Tía</option>
-                        <option value="Abuelo/Abuela">Abuelo / Abuela</option>
-                        <option value="Primo/Prima">Primo / Prima</option>
-                        <option value="Amigo/Amiga">Amigo / Amiga</option>
-                        <option value="Otro">Otro familiar o allegado</option>
-                    </select>
-                </div>
-
-                <div class="input-group">
-                    <label class="block text-xl font-bold mb-2 text-woodBrown">¿Cuántas personas asisten?</label>
-                    <select name="cantidad_personas" required
-                        class="input-animate w-full bg-white/80 backdrop-blur-sm border-4 border-white/60 p-4 rounded-[1.5rem] text-lg outline-none cursor-pointer focus:border-honey">
-                        <option value="" disabled selected>Selecciona la cantidad...</option>
-                        <option value="0">No podré asistir 😢</option>
-                        <option value="1">1 (Solo asisto yo)</option>
-                    </select>
+                    <div class="space-y-4 mt-2">
+                        <div>
+                            <label class="block text-sm md:text-base font-bold mb-1 text-woodBrown">¿Qué eres de Dylan
+                                Steven?</label>
+                            <select name="relacion" required
+                                class="input-animate w-full bg-white/90 border-2 border-white/60 p-3 rounded-xl text-base outline-none cursor-pointer focus:border-honey text-woodBrown">
+                                <option value="" disabled selected>Selecciona tu parentesco...</option>
+                                <option value="Tio/Tia">Tío / Tía</option>
+                                <option value="Abuelo/Abuela">Abuelo / Abuela</option>
+                                <option value="Primo/Prima">Primo / Prima</option>
+                                <option value="Amigo/Amiga">Amigo / Amiga</option>
+                                <option value="Otro">Otro familiar o allegado</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm md:text-base font-bold mb-1 text-woodBrown">¿Nos vas a
+                                acompañar?</label>
+                            <select name="cantidad_personas" required
+                                class="input-animate w-full bg-white/90 border-2 border-white/60 p-3 rounded-xl text-base outline-none cursor-pointer focus:border-honey text-woodBrown">
+                                <option value="" disabled selected>Elige una opción...</option>
+                                <option value="1">¡Sí! Ahí estaré (1 persona)</option>
+                                <option value="0">Lo siento, no podré asistir 😢</option>
+                            </select>
+                        </div>
+                    </div>
+                    <p
+                        class="text-sm font-semibold text-honey/80 bg-poohYellow/20 inline-block px-4 py-1 rounded-full border border-poohYellow/30">
+                        #BabyShowerDylanSteven</p>
                 </div>
 
                 <button type="submit" id="submitBtn"
-                    class="w-full mt-8 bg-honey/90 backdrop-blur-sm text-white text-2xl font-display py-5 rounded-[2rem] border-b-8 border-woodBrown hover:bg-woodBrown active:translate-y-2 active:border-b-0 transition-all shadow-xl">
-                    ¡Confirmar Asistencia!
+                    class="w-full mt-4 bg-honey/90 backdrop-blur-sm text-white text-xl md:text-2xl font-display py-4 md:py-5 rounded-2xl border-b-8 border-woodBrown hover:bg-woodBrown active:translate-y-2 active:border-b-0 transition-all shadow-xl flex items-center justify-center gap-2">
+                    <img src="https://img.icons8.com/ios-filled/50/ffffff/paper-plane.png" class="w-6 h-6" alt="Enviar">
+                    Enviar Confirmación
                 </button>
             </form>
         </div>
     </section>
 
-    <footer class="text-center pt-16 pb-12 px-6 bg-bgCream relative overflow-hidden">
-        <img src="https://img.icons8.com/color/48/bee.png" class="absolute bottom-10 left-10 w-10 animate-fly-2"
-            alt="Abeja">
-        <img src="1.png" class="w-24 h-24 mx-auto mb-6 animate-bounce drop-shadow-lg" style="animation-duration: 3s;"
-            alt="Tarro de Miel">
-        <h3 class="font-display text-3xl text-honey mb-3">¡Nos vemos pronto!</h3>
-        <p class="font-bold text-lg text-woodBrown/70">Con cariño, los papás de Dylan Steven</p>
+    <footer
+        class="text-center pt-16 pb-12 px-4 md:px-6 bg-bgCream relative overflow-hidden reveal border-t-8 border-dashed border-poohYellow">
+        <img src="https://img.icons8.com/color/48/bee.png"
+            class="absolute bottom-8 left-4 md:left-10 w-8 md:w-10 animate-fly-2" alt="Abeja">
+        <img src="https://img.icons8.com/color/48/bee.png"
+            class="absolute top-10 right-10 w-6 opacity-50 animate-bounce" alt="Abeja pequeña">
+
+        <img src="1.png" class="w-20 h-20 md:w-28 md:h-28 mx-auto mb-6 animate-bounce drop-shadow-lg"
+            style="animation-duration: 3.5s;" alt="Tarro de Miel">
+
+        <h3 class="font-display text-3xl md:text-4xl text-honey mb-4">¡Nos vemos pronto!</h3>
+
+        <div class="max-w-lg mx-auto bg-white/60 p-6 rounded-3xl border-2 border-woodBrown/10 mb-6">
+            <p class="italic text-woodBrown/80 text-lg md:text-xl font-medium">"A veces las cosas más pequeñas ocupan el
+                mayor espacio en tu corazón."</p>
+            <p class="text-sm text-honey mt-2 font-bold">- Winnie the Pooh</p>
+        </div>
+
+        <p class="font-bold text-base md:text-lg text-woodBrown/70 mb-2">Con cariño, los papás de Dylan Steven</p>
+        <p
+            class="text-sm font-semibold text-honey/80 bg-poohYellow/20 inline-block px-4 py-1 rounded-full border border-poohYellow/30">
+            #BabyShowerDylanSteven</p>
+        <p class="text-sm text-woodBrown/60 mt-4">Hecho con amor por <a href="https://itsgatosky.com" target="_blank"
+                class="text-honey hover:text-woodBrown transition font-bold">El Tío Andres (ItsGatoSky)</a></p>
     </footer>
 
     <div id="successModal"
-        class="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm hidden opacity-0 transition-opacity duration-300">
-        <div class="bg-white p-8 md:p-12 rounded-[3rem] border-8 border-poohYellow shadow-2xl max-w-lg w-11/12 text-center relative transform scale-90 transition-transform duration-300"
+        class="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm hidden opacity-0 transition-opacity duration-300 px-4">
+        <div class="bg-white p-6 md:p-12 rounded-[2.5rem] border-8 border-poohYellow shadow-2xl max-w-lg w-full text-center relative transform scale-90 transition-transform duration-300"
             id="modalContent">
-            <img src="3.png" class="mx-auto w-24 mb-4 animate-bounce" alt="Pooh Feliz">
-            <h3 class="text-4xl font-display text-honey mb-4">¡Yupi! 🎉</h3>
-            <p class="text-xl font-bold text-woodBrown mb-6">Hemos recibido tu confirmación. ¡Estamos muy felices de que
-                nos acompañes a celebrar!</p>
+            <img src="3.png" class="mx-auto w-20 md:w-24 mb-4 animate-bounce" alt="Pooh Feliz">
+            <h3 class="text-3xl md:text-4xl font-display text-honey mb-3 md:mb-4">¡Yupi! 🎉</h3>
+            <p class="text-lg md:text-xl font-bold text-woodBrown mb-5 md:mb-6">Hemos recibido tu confirmación. ¡Estamos
+                muy felices de que nos acompañes a celebrar!</p>
             <button id="closeModalBtn"
-                class="bg-poohRed text-white px-8 py-3 rounded-[2rem] font-bold text-xl hover:bg-red-700 transition shadow-lg border-b-4 border-red-900 active:translate-y-1 active:border-b-0">
+                class="bg-poohRed text-white px-8 py-3 rounded-[2rem] font-bold text-xl hover:bg-red-700 transition shadow-lg border-b-4 border-red-900 active:translate-y-1 active:border-b-0 w-full md:w-auto">
                 Cerrar
             </button>
         </div>

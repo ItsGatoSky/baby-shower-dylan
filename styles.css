@@ -3,26 +3,51 @@ body {
     background-color: #FFFBEB;
 }
 
-/* 1. ANIMACIONES DEL FORMULARIO */
+/* EFECTO DE APARICIÓN AL SCROLL (Optimizado para móviles) */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+    will-change: opacity, transform;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ANIMACIONES DEL FORMULARIO */
 .input-animate {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .input-animate:focus {
-    transform: scale(1.03) translateY(-2px);
-    box-shadow: 0 0 25px rgba(251, 191, 36, 0.9);
+    transform: scale(1.02) translateY(-2px);
+    box-shadow: 0 0 15px rgba(251, 191, 36, 0.5);
     border-color: #B45309;
     background-color: #ffffff !important;
 }
 
-.input-group:focus-within label {
-    color: #78350F;
-    transform: translateY(-4px) scale(1.05);
-    text-shadow: 0 2px 4px rgba(255, 255, 255, 0.8);
-    transition: all 0.3s ease;
+/* Efecto flotante para imágenes decorativas */
+.floating {
+    animation: floating 4s ease-in-out infinite;
 }
 
-/* 2. ANIMACIONES INFANTILES (Wobble y Vuelo de Abejas) */
+@keyframes floating {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-15px) rotate(5deg);
+    }
+
+    100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+}
+
+/* ANIMACIONES INFANTILES */
 .wobble-hover:hover {
     animation: wobble 1s ease-in-out infinite;
 }
@@ -39,7 +64,7 @@ body {
     }
 }
 
-/* Animación de vuelo suave para las abejas */
+/* Vuelo de abejas */
 .animate-fly-1 {
     animation: fly1 6s ease-in-out infinite;
 }
@@ -76,7 +101,7 @@ body {
     }
 }
 
-/* 3. FONDO HEXAGONAL (Panal de Abejas) */
+/* FONDO HEXAGONAL (Panal de Abejas) */
 .hex-bg {
     background-color: #FFFBEB;
     background-image: url("data:image/svg+xml,%3Csvg width='56' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M28 66L0 50L0 16L28 0L56 16L56 50L28 66L28 100' fill='none' stroke='%23fbbf24' stroke-width='3' opacity='0.5'/%3E%3Cpath d='M28 0L28 34L0 50L0 84L28 100L56 84L56 50L28 34' fill='none' stroke='%23fbbf24' stroke-width='3' opacity='0.5'/%3E%3C/svg%3E");
